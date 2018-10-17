@@ -1,0 +1,32 @@
+body {
+  width: 100%;
+  box-sizing: border-box;
+}
+#instructionContent {
+  margin: 4em 0 2em;
+  padding: 0 1em;
+  text-align: center;
+}
+#pageTitle {
+  margin: 0.5em 0;
+  font-size: 2em;
+}
+#pageSubtitle {
+  font-size: 1.75em;
+}
+#mainContent {
+  width: 100%;
+  margin: 1em;
+}
+#inputWrapper {
+  margin: 1em 0;
+}
+#answerBox {
+  display: block;
+  width: 30em;
+  height: 2em;
+  margin: 0 auto;
+}
+#mapWrapper {
+  margin: 0 auto;
+}
