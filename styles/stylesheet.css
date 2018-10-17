@@ -30,3 +30,6 @@ body {
 #mapWrapper {
   margin: 0 auto;
 }
+#canada-map {
+  height: 20em;
+}
