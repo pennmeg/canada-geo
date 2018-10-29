@@ -6,24 +6,32 @@ $(function(){
     // Prevent the labels from showing for each province
     onRegionTipShow: function(e, el, code){
       e.preventDefault();
+    },
+    regionStyle: {
+      initial: {
+        fill: '#B8E186'
+      },
+      selected: {
+        fill: '#F4A582'
+      }
     }
   });
   // ----- List of provinces
-  var provinces = [
-    "British Columbia",
-    "Alberta",
-    "Manitoba",
-    "Saskatchewan",
-    "Ontario",
-    "Quebec",
-    "Newfoundland and Labrador",
-    "Nova Scotia",
-    "New Brunswick",
-    "Prince Edward Island",
-    "Yukon",
-    "North West Territories",
-    "Nunavut"
-  ];
+  var provinces = {
+    "British Columbia": "CA-BC",
+    "Alberta": "CA-AB",
+    "Manitoba": "CA-MB",
+    "Saskatchewan": "CA-SK",
+    "Ontario": "CA-ON",
+    "Quebec": "CA-QC",
+    "Newfoundland and Labrador": "CA-NL",
+    "Nova Scotia": "CA-NS",
+    "New Brunswick": "CA-NB",
+    "Prince Edward Island": "CA-PE",
+    "Yukon": "CA-YT",
+    "North West Territories": "CA-NT",
+    "Nunavut": "CA-NU"
+  };
   // ----- Prevent the form from submitting / reloading
   $("form").submit(function(e){
       e.preventDefault();
@@ -32,14 +40,16 @@ $(function(){
   $('#answerBox').keypress(function(event){
     // console.log(String.fromCharCode(event.which));
     var checkAnswer = $('#answerBox').val();
-    // console.log("Value: ", $('#answerBox').val());
+    // console.log("VALUE: ", $('#answerBox').val());
     checkAnswer = checkAnswer.toLowerCase();
-    $.each(provinces,function(index,item){
-       provinces[index] = item.toLowerCase();
-       if (checkAnswer == item) {
-         console.log(item);
-         document.getElementById('answerBox').value='';
-       }
-    });
+  //   console.log("LOWERCASE VAL: ", checkAnswer);
+    for(var key in provinces) {
+      key = key.toLowerCase();
+      if (checkAnswer == key) {
+        // console.log("LOWERCASE KEY: ", key);
+
+        document.getElementById('answerBox').value='';
+      }
+    }
   });
 });
